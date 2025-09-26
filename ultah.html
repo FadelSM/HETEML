@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Selamat Ulang Tahun</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card {
+      background: white;
+      padding: 30px 40px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      text-align: center;
+      position: relative;
+      z-index: 2;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .card h1 {
+      font-size: 2.5em;
+      color: #e91e63;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 1.2em;
+      color: #555;
+    }
+
+    .balloon {
+      position: absolute;
+      bottom: -150px;
+      width: 60px;
+      height: 80px;
+      border-radius: 50% 50% 50% 50%;
+      background: #ff4081;
+      opacity: 0.8;
+      animation: float 6s infinite;
+    }
+
+    .balloon::after {
+      content: "";
+      position: absolute;
+      width: 2px;
+      height: 60px;
+      background: #333;
+      left: 50%;
+      bottom: -60px;
+      transform: translateX(-50%);
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0) scale(1);}
+      50% { transform: translateY(-300px) scale(1.1);}
+      100% { transform: translateY(-600px) scale(1);}
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: scale(0.8);}
+      to {opacity: 1; transform: scale(1);}
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>🎉 Selamat Ulang Tahun 🎂</h1>
+    <p>Semoga selalu sehat, bahagia, dan semua impianmu tercapai 🌸✨</p>
+  </div>
+
+  <!-- Balon -->
+  <div class="balloon" style="left:20%; background:#ff80ab; animation-delay:0s;"></div>
+  <div class="balloon" style="left:50%; background:#ff4081; animation-delay:2s;"></div>
+  <div class="balloon" style="left:70%; background:#f48fb1; animation-delay:4s;"></div>
+
+  <script>
+    // Tambah musik ucapan ultah
+    const audio = new Audio("https://www.fesliyanstudios.com/play-mp3/387");
+    window.addEventListener("click", () => {
+      audio.play();
+    });
+  </script>
+</body>
+</html>
